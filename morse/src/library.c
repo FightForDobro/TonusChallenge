@@ -104,9 +104,15 @@ char *decode_letter(char *morse_string, char *decoded_string)
 
     for (int i = 0; morse_string[i]; i++)
     {
-        if (morse_string[i] == '\n')
+        if (morse_string[i] == '\n' || morse_string[i] == '\\' && morse_string[i + 1] == 'n')
         {
-            pattern = '\n';
+            pattern = 'n';
+
+            if (morse_string[i] == '\\' && morse_string[i + 1] == 'n')
+                morse_string = mx_strchr(morse_string, '\\', 0);
+            else
+                pattern = '\n';
+
             find_morse_code_id(morse_letter, decoded_string);
             print_letter(27, decoded_string);
             free(morse_letter);
