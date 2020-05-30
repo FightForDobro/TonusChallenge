@@ -104,7 +104,7 @@ char *decode_letter(char *morse_string, char *decoded_string)
 
     for (int i = 0; morse_string[i]; i++)
     {
-        if (morse_string[i] == '\n' || morse_string[i] == '\\' && morse_string[i + 1] == 'n')
+        if (morse_string[i] == '\n' || (morse_string[i] == '\\' && morse_string[i + 1] == 'n'))
         {
             pattern = 'n';
 
@@ -158,4 +158,5 @@ void decode(char *morse_string)
         morse_string = decode_letter(morse_string, decoded_string);
 
     write(1, decoded_string, mx_strlen(decoded_string));
+    write(1, "\n", 1);
 }
