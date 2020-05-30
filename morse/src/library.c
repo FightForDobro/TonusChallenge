@@ -1,8 +1,9 @@
 #include "library.h"
+#include "stdio.h"
 
 void raise_error()
 {
-    write(2, "usage: ./morse \"str\"", 20);
+    write(2, "usage: ./morse \"str\"\n", 22);
     exit(0);
 }
 
@@ -85,14 +86,13 @@ void find_morse_code_id(char *morse_letter_code, char *decoded_string)
 
     for (i = 0; i <= 26 ; i++)
     {
+        if (i >= 26) raise_error();
         if (mx_strcmp(morse_letter_code, morse_code[i]))
         {
             print_letter(i, decoded_string);
             break;
         }
     }
-
-    if (i > 26) raise_error();
 }
 
 char *decode_letter(char *morse_string, char *decoded_string)
