@@ -67,9 +67,9 @@ int mx_strcmp(char *x, char *y)
 
 void print_letter(int letter_id, char *decoded_string)
 {
-    char morse_letters[28] = {
+    char morse_letters[29] = {
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-            'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+            'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
             'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '.', ' ', '\n'};
 
     decoded_string[mx_strlen(decoded_string)] = morse_letters[letter_id];
@@ -79,14 +79,14 @@ void find_morse_code_id(char *morse_letter_code, char *decoded_string)
 {
     int i;
 
-    char *morse_code[26] = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.",
+    char *morse_code[27] = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.",
                             "....", "..", ".---", "-.-", ".-..", "--", "-.",
-                            "---", ".--.", ".-.", "...", "-", "..-", "...-",
-                            ".--", "-..-", "-.--", "--..", "....."};
+                            "---", ".--.", "--.-",  ".-.", "...", "-", "..-",
+                            "...-", ".--", "-..-", "-.--", "--..", "....."};
 
-    for (i = 0; i <= 26 ; i++)
+    for (i = 0; i <= 27 ; i++)
     {
-        if (i >= 26) raise_error();
+        if (i >= 27) raise_error();
         if (mx_strcmp(morse_letter_code, morse_code[i]))
         {
             print_letter(i, decoded_string);
@@ -114,7 +114,7 @@ char *decode_letter(char *morse_string, char *decoded_string)
                 pattern = '\n';
 
             find_morse_code_id(morse_letter, decoded_string);
-            print_letter(27, decoded_string);
+            print_letter(28, decoded_string);
             free(morse_letter);
             break;
         }
@@ -125,7 +125,7 @@ char *decode_letter(char *morse_string, char *decoded_string)
             if (morse_letter[0] == '\0')
             {
                 delete_space = 1;
-                print_letter(26, decoded_string);
+                print_letter(27, decoded_string);
                 free(morse_letter);
                 break;
             }
