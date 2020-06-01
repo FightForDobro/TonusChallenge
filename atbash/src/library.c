@@ -44,4 +44,7 @@ void decode(char *string) {
 
     write(1, result_string, mx_strlen(result_string));
     write(1, "\n", 1);
+
+    free(result_string);
+    result_string = NULL;
 }
