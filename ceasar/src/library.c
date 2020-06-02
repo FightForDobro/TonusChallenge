@@ -1,4 +1,4 @@
-#include <library.h>
+#include "library.h"
 
 void print_letter(char letter, int shift)
 {
@@ -24,4 +24,6 @@ void decode(char *string, int shift)
 
         string++;
     }
+
+    mx_print_char('\n');
 }
