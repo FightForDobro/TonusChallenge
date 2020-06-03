@@ -4,15 +4,17 @@
 /* Includes */
 #include <stdio.h>
 #include <unistd.h>
-#include <stdbool.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 /* Prototypes */
-void decode(char *string, char *key);
+void decode(char *string);
 void mx_printchar(char chr);
+char *create_string(size_t size);
+int mx_strlen(const char *string);
+int power(int base, int a);
 bool is_upper(char chr);
 bool is_lower(char chr);
 bool is_alpha(char chr);
-void raise_error();
 
 #endif // VIGENERE_LIBRARY_H

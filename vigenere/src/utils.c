@@ -19,3 +19,9 @@ bool is_alpha(char chr)
 {
     return is_upper(chr) || is_lower(chr);
 }
+
+void raise_error()
+{
+    write(2, "usage: ./caesar \"str\"\n", 22);
+    exit(0);
+}
