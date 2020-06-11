@@ -1,57 +1,4 @@
 #include "library.h"
-//
-//void parse_string(char *string)
-//{
-//
-//}
-//
-//void decode(char *string, int key)
-//{
-//
-////    char *rails[key];
-////
-////    for (int i = 0; i < key; i++)
-////    {
-////        string
-////    }
-//
-//    int STR_LEN = 29;
-//
-//    int array[key];
-//
-//    for (int i = 0; i < key; i++)
-//        array[i] = 0;
-//
-//    int cycles = key * 2 - 2;
-//    int rem = STR_LEN % cycles;
-//    int mul;
-//    int add = 0;
-//
-//    for (int j = 0; j < key; j++, rem--)
-//    {
-//
-//        if (j != 0 && j + 1 != key)
-//            mul = 2;
-//        else
-//            mul = 1;
-//
-//        if (rem)
-//            add = 1;
-//
-//        else if (!rem)
-//            add = 0;
-//
-//
-//        array[j] = ( (STR_LEN / cycles ) * mul ) + add;
-//    }
-//
-//    printf("A");
-//}
-//                                              //25
-////1 . . . . . 1 . . . . . 1 . . . . . 1 . . . . . 1 . . . . . .
-////. 2 . . . 6 . 2 . . . 6 . 2 . . . 6 . 2 . . . 6 . 2 . . . . .
-////. . 3 . 5 . . . 3 . 5 . . . 3 . 5 . . . 3 . 5 . . . 3 . 5 . .
-////. . . 4 . . . . . 4 . . . . . 4 . . . . . 4 . . . . . 4 . . .
 
 void prepare_data(t_cipher_data *cipherData)
 {
@@ -82,19 +29,6 @@ char **make_substrings(t_cipher_data *cipherData)
     for (int j = 0; j < cipherData->key; j++)
         result[j] = create_new_string(sizeof(char) * cipherData->arr[j] + 1);
 
-//    for (int i = 0; i < cipherData->key ; i++)
-//    {
-//        int iter = cipherData->arr[i];
-//
-//        result[i][iter] = '\0';
-//
-//        while (iter)
-//        {
-//            result[i][iter - 1] = cipherData->string[iter - 1];
-//            iter--;
-//        }
-//    }
-
     for (int k = 0; k < cipherData->key;)
     {
 
@@ -116,6 +50,12 @@ void print_data(t_cipher_data *cipherData)
     int row_selector = 0;
     int way = 1;
 
+    /* Collect Garbage */
+    char *garbage[cipherData->key];
+
+    for (int j = 0; j < cipherData->key; j++)
+        garbage[j] = substrings[j];
+
     while (cipherData->str_len--)
     {
         if (row_selector == cipherData->key - 1)
@@ -128,6 +68,11 @@ void print_data(t_cipher_data *cipherData)
         row_selector += way;
     }
 
+    for(int i = 0; i < cipherData->key; i++)
+        free(garbage[i]);
+
+    free(substrings);
+    substrings = NULL;
 }
 
 void decode(t_cipher_data *cipherData)

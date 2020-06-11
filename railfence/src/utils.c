@@ -18,9 +18,9 @@ int mx_strlen(char *string)
 
 char *create_new_string(unsigned long size)
 {
-    char *string = malloc(sizeof(char) * size);
+    char *string = malloc(sizeof(char) * size + 1);
 
-    for (int i = 0; i <= size ; i++)
+    for (unsigned long i = 0; i <= size ; i++)
         string[i] = '\0';
 
     return string;
