@@ -33,7 +33,7 @@ int count_binary_code(int binary_of_ba[5])
     return result;
 }
 
-void parse_code(char *ba_code)
+int parse_code(char *ba_code)
 {
     if (*ba_code)
     {
@@ -63,10 +63,13 @@ void parse_code(char *ba_code)
         }
         return parse_code(ba_code);
     }
+
+    return 0;
 }
 
 void decode(char *string)
 {
     char *formatted_string = format_string(string);
     parse_code(formatted_string);
+    mx_printchar('\n');
 }

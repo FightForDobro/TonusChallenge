@@ -1,6 +1,6 @@
-NAME = morse
+NAME = polybius
 
-SRC = main library
+SRC = main library utils
 
 INC = library
 

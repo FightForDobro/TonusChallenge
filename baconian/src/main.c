@@ -2,39 +2,9 @@
 
 int main(int argc, char **argv)
 {
-    decode("It WAs toO mucH fOR mrs. Joe, WHO imMEdiatEly ROsE.\n"
-           "“i TelL YoU WHaT, YoUng felloW,” SaId shE, “i dIdn’t brIng yOU uP By hAND To\n"
-           "BadgER pEoplE’s lIves oUt. it woUld bE blAMe TO ME aNd Not PRaiSE, If i Had.\n"
-           "PEoPle ARe Put In tHe HULKs bECAUsE they MurDer, anD BECauSE TheY roB, and FORgE,\n"
-           "aNd DO all sorTs oF bAD; aNd tHEy always begIN by AskINg QuestiONS. now,\n"
-           "YOu Get along TO bED!”\n"
-           "I wAs never aLLoWed a CanDle to lIght ME tO Bed, AND, As I wenT UpStaiRs iN\n"
-           "the dArk, wItH mY HeAd tiNGLiNg,—frOm mRs. Joe’S ThIMBlE havInG played the\n"
-           "TAmBOUrIne upon iT, To AccoMPANy HeR laSt worDs,—i fELT fEARfuLlY SensibLe of\n"
-           "THE gReaT CONvENIenCe THAT the hulkS wEre hAnDy fOr mE. i WAs CL\n"
-           "\n"
-           "It wAS tOO MuCH fOr mrs. JOe, wHo immeDiAtelY ROse. “i tELL YOu wHAT, YoUnG feLLow,”\n"
-           " SAId sHe, “i DIdN’t BriNg yoU up by hAnD to bAdgEr pEopLE’S LiVes OUt.\n"
-           " it wOulD be BlAme To me and noT PraiSe, iF I Had. PEoPlE Are puT IN tHe HulKs\n"
-           " beCAUsE tHey MuRder, aNd Because tHey rOb, aNd fORgE, aNd DO alL sortS oF BaD;\n"
-           " aND THeY alwAYS begin By AsKinG quEStIoNs. nOW, yoU GEt aLonG To Bed!”\n"
-           "i wAS nEver aLLowed A canDLe TO liGht Me to bED, And, AS i WEnt UpSTaIrS in The Dark,\n"
-           "WiTH MY HeAd tingLINg,—frOM mRs. Joe’S thImblE hAVING pLAYEd The tambouRiNE upON it,\n"
-           "To aCcomPANy HeR Last wORDs,—I fElt FEaRfulLY SensibLe Of The GreAT cOnvenience THat\n"
-           "tHE huLks werE HANdY for me. i wAs CLeArLY ON mY wAy tHEre. I HAd bEguN By AskInG\n"
-           "QueStiOns, AND i wAS goIng To roB Mrs. JoE.\n"
-           "SIncE ThAt time, whicH Is faR ENOuGh AwaY Now, I HAve OftEN tHoughT ThAt few\n"
-           "pEOplE knoW whAT SecReCY tHere Is IN the YoUNG unDEr tERrOr. NO maTteR hoW\n"
-           "unrEaSONaBLe ThE teRRoR, SO tHAt It bE TeRrOr. i waS In MorTal TErROR Of ThE\n"
-           "yoUNg mAN Who wanTed MY HEaRt And LiveR; I WaS IN mOrTal tErROr of MY INtErlOCutor\n"
-           "with ThE iroN leG; I wAs in morTAl TerROR Of mYseLf, frOm wHoM an Awful pRoMisE\n"
-           "HAD bEeN exTrActed; I hAd no hope Of deLivEraNCe ThroUgH mY ALl-PoweRFUl SiSTer,\n"
-           "whO REpUlSed ME aT EVErY tuRN; I am AFrAID tO tHinK Of wHAT i mIghT HaVe DonE on\n"
-           "RequireMEnt, In tHe sEcRECy oF My TeRrOr. iF i sLept At aLL tHaT niGHt, iT WAs oNly\n"
-           "TO iMagInE MysElf DriFTIng DOwn The RiveR On a StROnG spring-TIDe, tO ThE hulks;\n"
-           "A GHOstLY pIrate CaLLIng OUt To me tHROUGh a SPeAkinG-trUMPet, AS i Passed thE\n"
-           "GiBbet-STATiOn, thAt I HAd BEtter CoMe ashORe And be hAngeD THere AT oNce, aNd\n"
-           "NoT PUt It ofF. I WaS aFraID to SLEeP, eveN if I hAD bEeN inCLined, fOr i KneW\n"
-           "tHaT At The FIrsT fAinT daWn Of mORNInG i must Rob The PAnTry. thEre was no DoINg\n"
-           "It IN thE night, FOR ThEre WAS No GETtiNg A LIGht by easY fRictIoN thEn; tO hAVe GO");
+
+    if (argc != 2)
+        raise_error();
+
+    decode(argv[1]);
 }

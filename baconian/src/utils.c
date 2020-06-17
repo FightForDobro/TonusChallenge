@@ -11,6 +11,13 @@ int mx_strlen(const char *string)
 
 }
 
+void raise_error()
+{
+    char *error_msg = "./baconian \"str\"\n";
+    write(2, error_msg, mx_strlen(error_msg));
+    exit(0);
+}
+
 bool is_upper(char chr)
 {
     return chr >= 65 && chr <= 95;
@@ -50,14 +57,3 @@ char *create_string(size_t size)
 
     return string;
 }
-
-
-/*
-    WELCOME TO ANCIENT GREECE. THE NEXT CIPHER WAS MADE BY AN ANCIENT GREEK HISTORIAN
-    AND SCHOLAR POLYBIUS.TO DECRYPT THE SECRET MESSAGE, YOUR SQUARE WILL HAVE THE DIMENSIONS
-    SIX BY SIX. AFTER YOU HAVE ADDED ALL THE LETTERS, ADD THE DIGITS FROM ZERO TO NINE. THAT
-    SHOULD MAKE A PERFECT SQUARE FOR YOU. ON THE SIDES, USE THE LETTERS A, B, C, D, E, AND
-    F.BINARY FOR THIS TASK MUST BE CALLED POLYBIUS.
-*/
-
-

@@ -1,5 +1,32 @@
 #include "library.h"
 
+void print_char(char chr)
+{
+    write(1, &chr, 1);
+}
+
+int mx_strlen(char *string)
+{
+    int len = 0;
+
+    while (*string++)
+        len++;
+
+    return len;
+}
+
+bool is_digit(char chr)
+{
+    return chr >= 48 && chr <= 57;
+}
+
+void raise_error()
+{
+    char *error_msg = "./checkboard \"text\" \"alphabet\" \"num1\" \"num2\"\n";
+    write(2, error_msg, mx_strlen(error_msg));
+    exit(0);
+}
+
 bool is_whitespace(char chr)
 {
     return (chr >= 8 && chr <= 13) || chr == 32;

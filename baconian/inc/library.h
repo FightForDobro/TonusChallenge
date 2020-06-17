@@ -10,6 +10,7 @@
 /* Prototypes */
 void decode(char *string);
 void mx_printchar(char chr);
+void raise_error();
 char *create_string(size_t size);
 int mx_strlen(const char *string);
 int power(int base, int a);

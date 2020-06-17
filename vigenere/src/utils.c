@@ -22,6 +22,6 @@ bool is_alpha(char chr)
 
 void raise_error()
 {
-    write(2, "usage: ./caesar \"str\"\n", 22);
+    write(2, "usage: ./viginere \"str\"\n", 27);
     exit(0);
 }

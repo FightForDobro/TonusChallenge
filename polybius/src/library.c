@@ -6,10 +6,10 @@ void parse_code(char *string, char *result)
 
     if (*string != '\0')
     {
-        if (*string >= 9 && *string <= 13 || *string >= 32 && *string <= 47)
+        if ((*string >= 9 && *string <= 13) || (*string >= 32 && *string <= 47))
         {
             *result = *string++;
-            return parse_code(string, ++result);
+            parse_code(string, ++result);
         }
         else
 
@@ -26,7 +26,7 @@ void parse_code(char *string, char *result)
 
             else raise_error();
 
-            return parse_code(string, ++result);
+            parse_code(string, ++result);
     }
 }
 

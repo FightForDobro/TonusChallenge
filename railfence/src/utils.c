@@ -1,6 +1,5 @@
 #include "library.h"
 
-
 void mx_printchar(char chr)
 {
     write(1, &chr, 1);
@@ -29,6 +28,13 @@ char *create_new_string(unsigned long size)
 bool is_whitespace(char chr)
 {
     return (chr >= 8 && chr <= 13) || chr == 32;
+}
+
+void raise_error()
+{
+    char *error_msg = "./railfence \"str\" \"num1\"\n";
+    write(2, error_msg, mx_strlen(error_msg));
+    exit(0);
 }
 
 int mx_atoi(char *string)
